@@ -1,164 +1,397 @@
-<!--
-     \- Simple Mainpage -\
-      \- by MFn -\
-       \- https://github.com/MFn233/PCL-Mainpage -\
-        \- Version: 0.1.2 -\
--->
+<StackPanel.Resources>
+      <!--Template Starts-->
+      <!--Template Ends-->
+      <!--Styles Starts-->
+      <!--即将弃用-->
+      <Style TargetType="Ellipse">
+        <Setter Property="Fill" Value="{DynamicResource ColorBrush3}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Height" Value="8" />
+        <Setter Property="Width" Value="8" />
+        <Setter Property="Margin" Value="0,0,10,0" />
+      </Style>
+      <Style TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="Black" />
+      </Style>
+      <Style x:Key="PGTextBlock" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Margin" Value="25,5,0,5" />
+        <Setter Property="FontSize" Value="16" />
+      </Style>
+      <Style x:Key="ListItem" TargetType="TextBlock">
+        <Setter Property="Margin" Value="10,-13.5,5,15" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="Black" />
+      </Style>
+      <Style x:Key="ListItemLink" TargetType="local:MyTextButton">
+        <Setter Property="Margin" Value="15,-15,5,15" />
+        <Setter Property="TextElement.FontSize" Value="20" />
+      </Style>
+      <Style x:Key="ListStyle" TargetType="StackPanel">
+        <Setter Property="Margin" Value="22,0,14,5" />
+      </Style>
+      <Style x:Key="Read" TargetType="local:MyButton">
+        <Setter Property="Margin" Value="0,0,5,5" />
+        <Setter Property="Height" Value="35" />
+        <Setter Property="Padding" Value="13,0,13,0" />
+        <Setter Property="EventType" Value="打开网页" />
+      </Style>
+      <Style x:Key="Read0" TargetType="local:MyButton" BasedOn="{StaticResource Read}">
+        <Setter Property="Grid.Column" Value="0" />
+        <Setter Property="Text" Value="Minecraft Wiki" />
+        <!--<Setter Property="ColorType" Value="Highlight"/>-->
+      </Style>
+      <Style x:Key="Read0+" TargetType="local:MyButton" BasedOn="{StaticResource Read0}">
+        <Setter Property="Grid.Row" Value="0" />
+        <Setter Property="Grid.ColumnSpan" Value="3" />
+      </Style>
+      <Style x:Key="Read1" TargetType="local:MyButton" BasedOn="{StaticResource Read}">
+        <Setter Property="Grid.Column" Value="1" />
+        <Setter Property="Text" Value="MCBBS" />
+      </Style>
+      <Style x:Key="Read1+" TargetType="local:MyButton" BasedOn="{StaticResource Read1}">
+        <Setter Property="Grid.Column" Value="0" />
+        <Setter Property="Grid.Row" Value="1" />
+      </Style>
+      <Style x:Key="Read2" TargetType="local:MyButton" BasedOn="{StaticResource Read}">
+        <Setter Property="Grid.Column" Value="2" />
+        <Setter Property="Text" Value="官网" />
+      </Style>
+      <Style x:Key="Read2+" TargetType="local:MyButton" BasedOn="{StaticResource Read2}">
+        <Setter Property="Grid.Column" Value="1" />
+        <Setter Property="Grid.Row" Value="1" />
+      </Style>
+      <Style x:Key="ReadR" TargetType="local:MyButton" BasedOn="{StaticResource Read}">
+        <Setter Property="Grid.Column" Value="3" />
+        <Setter Property="Text" Value="Reddit" />
+      </Style>
+      <Style x:Key="ReadR+" TargetType="local:MyButton" BasedOn="{StaticResource ReadR}">
+        <Setter Property="Grid.Column" Value="2" />
+        <Setter Property="Grid.Row" Value="1" />
+      </Style>
+      <Style x:Key="Code" TargetType="Border">
+        <Setter Property="Background" Value="#e0e0e0" />
+        <Setter Property="BorderBrush" Value="#444" />
+        <Setter Property="CornerRadius" Value="1" />
+        <Setter Property="Margin" Value="5,0,5,0" />
+        <Setter Property="BorderThickness" Value="1" />
+      </Style>
+      <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Padding" Value="3,0,3,0" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+      </Style>
+      <Style x:Key="verImgBdr" TargetType="Border">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="BorderThickness" Value="4" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBrush3}" />
+        <Setter Property="CornerRadius" Value="7" />
+      </Style>
+      <Style x:Key="verTxtBlk" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorBrush7}" />
+        <Setter Property="Width" Value="180" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontSize" Value="20" />
+      </Style>
+      <Style x:Key="imgTitle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#FF777777" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,0,15" />
+      </Style>
+      <Style x:Key="verTxtBdr" TargetType="Border">
+        <Setter Property="Margin" Value="0,-20,-1,10" />
+        <Setter Property="Background" Value="{DynamicResource ColorBrush3}" />
+        <Setter Property="Width" Value="190" />
+        <Setter Property="Height" Value="36" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="BorderThickness" Value="0,0,0,3" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBrush2}" />
+      </Style>
+      <!--h2-->
+      <Style x:Key="h2" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="Padding" Value="15,5" />
+        <Setter Property="Margin" Value="5,15,5,10" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorBrush3}" />
+      </Style>
+      <!--h3-->
+      <Style x:Key="h3" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Padding" Value="30,0" />
+        <Setter Property="Margin" Value="-10,0,10,17" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorBrush4}" />
+      </Style>
+      <!--h4-->
+      <Style x:Key="h4" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Padding" Value="30,0" />
+        <Setter Property="Margin" Value="5,0,10,10" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorBrush4}" />
+      </Style>
+      <!--footnote-->
+      <Style x:Key="footnote" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="30,0" />
+        <Setter Property="Margin" Value="0,20,0,15" />
+        <Setter Property="Foreground" Value="#FF777777" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+      </Style>
+      <!--ButtonNameBorder-->
+      <!--ImageButtonStyle-->
+      <Style x:Key="ImgBtnImg" TargetType="Image">
+        <Setter Property="MaxWidth" Value="70px" />
+        <Setter Property="MaxHeight" Value="70px" />
+        <Setter Property="Margin" Value="3" />
+      </Style>
+      <Style x:Key="ImgBtnBdr" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource ColorBrush7}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBrush3}" />
+        <Setter Property="BorderThickness" Value="2px" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="Margin" Value="2px" />
+      </Style>
+      <Style x:Key="NameBdr" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource ColorBrush3}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="5,5,0,0" />
+        <Setter Property="Margin" Value="-2,-2,-2,2" />
+      </Style>
+      <Style x:Key="ImgBtnTxt" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Grid.Row" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorBrush7}" />
+        <Setter Property="FontSize" Value="12px" />
+        <Setter Property="Margin" Value="8px,2px" />
+      </Style>
+</StackPanel.Resources>
 
-<!--欢迎页-->
-<local:MyCard Margin="0,-6,0,12" Title="欢迎"> <!--下面不是卡片，所以不用0,0,0,12-->
-     <StackPanel Margin="24,35,24,15">
-          <TextBlock HorizontalAlignment="Center" Margin="0,0,0,0"
-               Foreground="{DynamicResource ColorBrush2}" FontSize="20"
-               Text="欢迎使用Simple Mainpage!" />
-          <Calendar HorizontalAlignment="Center" Margin="0,12,0,10" />
-          <!--因为“你知道吗”在启动游戏的时候会出现，所以我只在这里设置了回声洞-->
-          <TextBlock Margin="5,0,5,12" TextWrapping="Wrap" HorizontalAlignment="Center"
-               Foreground="{DynamicResource ColorBrush1}" Text="{cave}" />
-     </StackPanel>
-</local:MyCard>
 
 
-<!-- Dock (大概可以这么称呼吧) -->
-<local:MyCard Margin="0,0,0,8">
-     <StackPanel Margin="24,6,24,12">
-          <Grid>
-               <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-               </Grid.ColumnDefinitions>
-               <local:MyIconTextButton Margin="0,5,0,6" Height="35" HorizontalAlignment="Center"
-                    Text="作者网站" EventType="打开网页" Grid.Column="0"
-                    EventData="https://mfn233.github.io/PCL-Mainpage/redirect/index.html"
-                    LogoScale="0.8" ColorType="Highlight"
-                    Logo="M13.5,4A1.5,1.5 0 0,0 12,5.5A1.5,1.5 0 0,0 13.5,7A1.5,1.5 0 0,0 15,5.5A1.5,1.5 0 0,0 13.5,4M13.14,8.77C11.95,8.87 8.7,11.46 8.7,11.46C8.5,11.61 8.56,11.6 8.72,11.88C8.88,12.15 8.86,12.17 9.05,12.04C9.25,11.91 9.58,11.7 10.13,11.36C12.25,10 10.47,13.14 9.56,18.43C9.2,21.05 11.56,19.7 12.17,19.3C12.77,18.91 14.38,17.8 14.54,17.69C14.76,17.54 14.6,17.42 14.43,17.17C14.31,17 14.19,17.12 14.19,17.12C13.54,17.55 12.35,18.45 12.19,17.88C12,17.31 13.22,13.4 13.89,10.71C14,10.07 14.3,8.67 13.14,8.77Z" />
-               <local:MyIconTextButton Margin="0,5,0,6" Height="35" HorizontalAlignment="Center"
-                    Text="刷新主页" EventType="刷新主页" Grid.Column="1"
-                    LogoScale="0.8" ColorType="Highlight"
-                    Logo="M256.455,8C322.724,8.119,382.892,34.233,427.314,76.685L463.029,40.97C478.149,25.851,504,36.559,504,57.941L504,192C504,205.255,493.255,216,480,216L345.941,216C324.559,216,313.851,190.149,328.97,175.029L370.72,133.279C339.856,104.38 299.919,88.372 257.49,88.006 165.092,87.208 87.207,161.983 88.0059999999999,257.448 88.764,348.009 162.184,424 256,424 297.127,424 335.997,409.322 366.629,382.444 371.372,378.283 378.535,378.536 382.997,382.997L422.659,422.659C427.531,427.531 427.29,435.474 422.177,440.092 378.202,479.813 319.926,504 256,504 119.034,504 8.001,392.967 8,256.002 7.999,119.193 119.646,7.755 256.455,8z" />
-          </Grid>
-          <local:MyListItem Margin="-2,0,0,0"
-               Logo="pack://application:,,,/images/blocks/GoldBlock.png" Title="今日人品"
-               Info="试试手气！" EventType="今日人品" Type="Clickable" />
-          <local:MyListItem Margin="-2,0,0,0"
-               Logo="pack://application:,,,/images/blocks/Grass.png" Title="启动基岩版"
-               Info="以 URL Scheme 的方式启动电脑上的 MC 基岩版。" EventType="打开网页" EventData="minecraft://"
-               Type="Clickable" />
-          <local:MyListItem Margin="-2,0,0,0"
-               Logo="pack://application:,,,/images/blocks/CommandBlock.png" Title="网页捷径"
-               Type="Clickable"
-               Info="打开网页捷径页面，暂时位于 GitHub" EventType="打开帮助"
-               EventData="https://mfn233.github.io/PCL-Mainpage/urlshortcut/main.json" />
-     </StackPanel>
-</local:MyCard>
 
-<!--工具-->
-<Grid Margin="0,0,0,8">
-     <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="1*" />
-          <ColumnDefinition Width="80" />
-          <ColumnDefinition Width="1*" />
-     </Grid.ColumnDefinitions>
-     <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5"
-          Stretch="Fill" Grid.Column="0" />
-     <TextBlock Text="工具" FontSize="15" Foreground="{DynamicResource ColorBrush4}" Grid.Column="1"
-          VerticalAlignment="Center" HorizontalAlignment="Center" />
-     <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5"
-          Stretch="Fill" Grid.Column="2" />
+<Border Margin="0,0,0,10" Padding="2,8" BorderThickness="1" Background="{DynamicResource ColorBrush5}" CornerRadius="5" VerticalAlignment="Top" BorderBrush="{DynamicResource ColorBrush3}" Opacity="0.7">
+      <Grid Margin="10,0,0,0">
+               <TextBlock x:Name="NewsHint" FontWeight="Bold" FontSize="12" VerticalAlignment="Center" Foreground="#FF000000">
+                       📰 本主页由 Wemsur 制作与维护。
+               </TextBlock>
+               <TextBlock x:Name="Hint2" FontWeight="Bold" FontSize="12" VerticalAlignment="Center" Foreground="#00000000">
+                       📰 本主页由 Wemsur 制作与维护。
+               </TextBlock>
+      </Grid>
+</Border>
+<Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.40*" />
+	<ColumnDefinition Width="0.014*" />
+        <ColumnDefinition Width="1*" />
+    </Grid.ColumnDefinitions>
+
+    <local:MyCard Title="欢迎使用此主页" Grid.Column="0" CanSwap="True" IsSwaped="False" Margin="1,1,8,9">
+        <StackPanel Margin="25,40,23,15">
+	      <local:MyButton Margin="6,9,6,9" Height="45" Grid.Column="0" ColorType="Highlight"
+                                Text="作者QQ号" EventType="复制文本" EventData="3060760656" ToolTip="复制QQ号" />
+	      <local:MyButton Margin="6,9,6,9" Height="45" Grid.Column="0" ColorType="Highlight"
+                                Text="作者b站主页" EventType="打开网页" EventData="https://space.bilibili.com/1826712095" ToolTip="打开作者b站主页" />
+	      <local:MyButton Margin="6,9,6,9" Height="45" Grid.Column="0" ColorType="Highlight"
+                                Text="主页gitee" EventType="打开网页" EventData="https://gitee.com/my_com_cn/pcl_homepage/tree/master" ToolTip="打开此主页gitee" />
+	      <local:MyButton Margin="6,9,6,9" Height="45" Grid.Column="0" ColorType="Highlight"
+                                Text="下载项目" EventType="下载文件" EventData="https://gitee.com/my_com_cn/pcl_homepage.git"  />
+	      <local:MyButton Margin="6,9,6,9" Height="45" Grid.Column="0" ColorType="Highlight"
+                                Text="反馈" EventType="打开网页" EventData="https://gitee.com/my_com_cn/pcl_homepage/issues/I89KQ1"  />
+	      <local:MyButton Margin="6,9,6,9" Height="45" Grid.Column="0" ColorType="Highlight"
+                                Text="了解更多" EventType="弹出窗口" EventData="关于|部分代码来自最亮的信标,感谢 仕洋不是羊 提供的技术支持。\n推荐一个作者喜欢的生存服务器：Jaserver QQ群：810787482\n如有疑问或建议请加作者QQ。"  />
+        </StackPanel>
+    </local:MyCard>
+
+    <local:MyCard Title="" Grid.Column="1" IsSwaped="False" Margin="4,1,4,9">
+        <StackPanel Margin="25,40,23,15">
+        </StackPanel>
+    </local:MyCard>
+
+    <local:MyCard Title="服务器 / 功能" CanSwap="True" Grid.Column="2" IsSwaped="False" Margin="8,1,1,9">
+        <StackPanel Margin="25,40,23,15">          
+          <Grid Margin="0,7,0,15">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*">
+                </ColumnDefinition>
+                <ColumnDefinition Width="100">
+                </ColumnDefinition>
+                <ColumnDefinition Width="1*">
+                </ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="0" />
+              <TextBlock Text="页 面" HorizontalAlignment="Center" FontSize="14" Foreground="{DynamicResource ColorBrush4}" Grid.Column="1" VerticalAlignment="Center" />
+              <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="2" />
+         </Grid>
+
+		<Grid>
+                       <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="1*" />
+	                      <ColumnDefinition Width="1*" />
+                              <ColumnDefinition Width="1*" />
+                       </Grid.ColumnDefinitions>
+                       <local:MyButton Margin="6,4,6,4" Grid.Column="0" Height="35" ColorType="Highlight"
+                             Text="下载版本" EventType="切换页面" EventData="1|1"/>
+                       <local:MyButton Margin="6,4,6,4" Grid.Column="1" Height="35" ColorType="Highlight"
+                             Text="百宝箱" EventType="切换页面" EventData="4|2"/>
+                       <local:MyButton Margin="6,4,6,4" Grid.Column="2" Height="35" ColorType="Highlight"
+                             Text="启动器设置" EventType="切换页面" EventData="3|2"/>
+                </Grid>
+
+          <Grid Margin="0,7,0,15">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*">
+                </ColumnDefinition>
+                <ColumnDefinition Width="100">
+                </ColumnDefinition>
+                <ColumnDefinition Width="1*">
+                </ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="0" />
+              <TextBlock Text="百 宝 箱" HorizontalAlignment="Center" FontSize="14" Foreground="{DynamicResource ColorBrush4}" Grid.Column="1" VerticalAlignment="Center" />
+              <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="2" />
+         </Grid>
+
+		<Grid>
+                       <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="1*" />
+	                      <ColumnDefinition Width="1*" />
+                       </Grid.ColumnDefinitions>
+                       <local:MyButton Margin="6,5,6,6" Grid.Column="0" Height="35" ColorType="Red"
+                                Text="今日人品" EventType="今日人品" />
+                       <local:MyButton Margin="6,5,6,6" Grid.Column="1" Height="35" ColorType="Red"
+                                   Text="刷新主页" EventType="刷新主页" />
+                </Grid>
+		<Grid>
+                       <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="1*" />
+                              <ColumnDefinition Width="1*" />
+                       </Grid.ColumnDefinitions>
+                       <local:MyButton Margin="6,5,6,6" Grid.Column="0" Height="35" ColorType="Red"
+                                  Text="清理垃圾" EventType="清理垃圾" />
+                       <local:MyButton Margin="6,5,6,6" Grid.Column="1" Height="35" ColorType="Red"
+                                  Text="内存优化" EventType="内存优化" />
+                </Grid>
+
+          <Grid Margin="0,7,0,15">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*">
+                </ColumnDefinition>
+                <ColumnDefinition Width="100">
+                </ColumnDefinition>
+                <ColumnDefinition Width="1*">
+                </ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="0" />
+              <TextBlock Text="网 页" HorizontalAlignment="Center" FontSize="14" Foreground="{DynamicResource ColorBrush4}" Grid.Column="1" VerticalAlignment="Center" />
+              <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="2" />
+         </Grid>
+	 <Grid>
+                  <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="1*" />
+	                      <ColumnDefinition Width="1*" />
+                  </Grid.ColumnDefinitions>
+         	  <local:MyListItem Margin="6,5,6,6" Grid.Column="0" 
+		                  Logo="https://modrinth.com/favicon.ico" Title="Modrinth" Info="打开modrinth资源站" 
+		                  EventType="打开网页" EventData="https://modrinth.com/" Type="Clickable" />
+         	  <local:MyListItem Margin="6,5,6,6" Grid.Column="1" 
+		                  Logo="https://static.hdslb.com/mobile/img/512.png" Title="bilibili" Info="打开bilibili" 
+		                  EventType="打开网页" EventData="https://www.bilibili.com/" Type="Clickable" />
+	 </Grid>
+	 <Grid>
+                  <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="1*" />
+	                      <ColumnDefinition Width="1*" />
+                  </Grid.ColumnDefinitions>
+         	  <local:MyListItem Margin="6,5,6,6" Grid.Column="0" 
+		                  Logo="https://www.mcbbs.net/favicon.ico" Title="MCBBS" Info="打开MCBBS" 
+		                  EventType="打开网页" EventData="https://www.mcbbs.net/" Type="Clickable" />
+         	  <local:MyListItem Margin="6,5,6,6" Grid.Column="1" 
+		                  Logo="https://static-beta.curseforge.com/images/favicon.ico" Title="Curseforge" Info="打开Curseforge" 
+		                  EventType="打开网页" EventData="https://www.curseforge.com/minecraft" Type="Clickable" />
+	 </Grid>
+        </StackPanel>
+    </local:MyCard>
 </Grid>
-<local:MyCard Margin="0,0,0,12" Title="启动器工具" CanSwap="True" IsSwaped="True">
-     <StackPanel Margin="24,40,24,15">
-          <local:MyHint IsWarn="False" Text="此处所有功能均为启动器自带，出问题请上报至 PCL2 仓库" Margin="0,0,0,10" />
-          <Grid>
-               <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-               </Grid.ColumnDefinitions>
-               <local:MyButton Grid.Column="0" Margin="0,0,10,0" Height="35" Text="打开 PCL 日志"
-                    EventType="打开文件" EventData="Log1.txt" ToolTip="查看当前PCL启动器的日志文件。" />
-               <local:MyButton Grid.Column="1" Margin="0,0,0,0" Height="35" Text="清理垃圾"
-                    EventType="清理垃圾" ToolTip="清理垃圾文件。" />
-          </Grid>
-          <Grid>
-               <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-               </Grid.ColumnDefinitions>
-               <local:MyButton Grid.Column="0" Margin="0,10,10,0" Height="35" Text="内存优化"
-                    EventType="内存优化" ToolTip="将物理内存占用降低约 1/3 ，不仅限于 MC ！&#xA;如果使用机械硬盘，这可能会导致一小段时间的严重卡顿。" />
-               <local:MyButton Grid.Column="1" Margin="0,10,0,0" Height="35" Text="定位游戏启动脚本"
-                    EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat"
-                    ToolTip="打开PCL上一次启动 MC 的脚本 (LatestLaunch.bat) 。" />
-          </Grid>
-     </StackPanel>
-</local:MyCard>
-<local:MyCard Margin="0,0,0,8" Title="下载器" CanSwap="True" IsSwaped="True">
-     <StackPanel Margin="24,40,24,15">
-          <local:MyHint Margin="0,0,0,10" IsWarn="False"
-               Text="使用 PCL 的高速多线程下载引擎下载任意文件。请注意，部分网站 (例如百度网盘) 可能会报错 (403) 已禁止，无法正常下载。" />
-          <local:MyHint Margin="0,0,0,10" IsWarn="True"
-               Text="链接必须为以 http:// 或 https:// 开头的网址，部分网址可能无法下载" />
-          <Grid>
-               <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*" />
-                    <ColumnDefinition Width="1*" />
-               </Grid.ColumnDefinitions>
-               <local:MyTextBox HintText="下载链接：" Margin="0,0,0,0" Name="web" Height="30"
-                    Grid.Column="0" ToolTip="在此输入下载链接，点击右边按钮下载自定义文件。&#xA;注意不要按下Enter键，这会直接启动游戏。" />
-               <local:MyButton EventType="下载文件" EventData="{Binding ElementName=web,Path=Text}"
-                    Text="开始下载→" Margin="5,0,0,0" Height="30" Grid.Column="2" Padding="2,0,2,0"
-                    ColorType="Highlight" />
-          </Grid>
-     </StackPanel>
+
+
+
+
+
+
+<Grid>
+	<Grid.ColumnDefinitions>
+        	<ColumnDefinition Width="1*" />
+	        <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+
+	<local:MyCard Margin="0,4,5,4" Title="高速下载" CanSwap="True" IsSwaped="False" Grid.Column="0">
+	    <StackPanel Margin="25,40,23,15">
+        	    <Grid>
+                	<Grid.ColumnDefinitions>
+                		<ColumnDefinition Width="1*" />
+                		<ColumnDefinition Width="60" />
+                	</Grid.ColumnDefinitions>
+            		<TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="4,4,18,0" />
+            		<local:MyTextBox x:Name="web" Grid.Column="0" Margin="0,4,0,0"  Height="35"/>
+            		<local:MyIconButton LogoScale="1.1" Logo="M475.5456 761.91744c10.05568 10.07616 23.26528 15.07328 36.4544 15.07328s26.39872-4.99712 36.4544-15.07328l264.27392-264.27392a51.58912 51.58912 0 0 0-72.92928-72.92928l-176.25088 176.27136V140.30848a51.56864 51.56864 0 1 0-103.13728 0v460.6976l-176.25088-176.27136a51.58912 51.58912 0 0 0-72.92928 72.92928L475.5456 761.91744z M826.71616 733.0816a51.56864 51.56864 0 0 0-51.56864 51.56864v40.67328H248.832v-40.67328a51.56864 51.56864 0 1 0-103.13728 0v92.24192a51.56864 51.56864 0 0 0 51.56864 51.56864h629.43232a51.56864 51.56864 0 0 0 51.56864-51.56864v-92.24192a51.52768 51.52768 0 0 0-51.54816-51.56864z"
+                                    Width="80" Height="32" Margin="0,4,10,0" HorizontalAlignment="Center" Padding="13,0,13,0" Grid.Column="1"
+                                    ToolTip="下载文件" EventData="{Binding ElementName=web,Path=Text}" EventType="下载文件" />
+          	  </Grid>
+	    </StackPanel>
+	</local:MyCard>
+
+	<local:MyCard Margin="5,4,0,4" Title="搜索" CanSwap="True" IsSwaped="False" Grid.Column="1">
+   	   <StackPanel Margin="25,40,23,15">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                	<ColumnDefinition Width="1*" />
+                	<ColumnDefinition Width="70" />
+        	</Grid.ColumnDefinitions>
+      	      	<TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="4,4,18,0" />
+        	<local:MyTextBox x:Name="sss" Grid.Column="0" Margin="0,4,0,0"  Height="35"/>
+	        <local:MyButton Width="60" Grid.Column="1" Height="35" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
+                Text="搜索" EventType="打开网页" EventData="{Binding ElementName=sss,Path=Text,StringFormat=&quot;https://cn.bing.com/search?q={0}&quot;}" />
+  	      </Grid>
+	   </StackPanel>
+	</local:MyCard>
+
+
+</Grid>
+
+
+
+
+
+
+
+<local:MyCard Title="回声洞"  Margin="0,8,0,4"  CanSwap="True" IsSwaped="False" >
+       <StackPanel Margin="25,40,23,15" >
+             <local:MyTextButton Margin="2,-4,2,-20" FontSize="20" Height="35" HorizontalAlignment="Left" 
+                      Text="{cave}" EventType="刷新主页" ToolTip="点击刷新"/>
+       </StackPanel>
 </local:MyCard>
 
-<!--其它-->
-<Grid Margin="0,0,0,8">
-     <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="1*" />
-          <ColumnDefinition Width="80" />
-          <ColumnDefinition Width="1*" />
-     </Grid.ColumnDefinitions>
-     <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5"
-          Stretch="Fill" Grid.Column="0" />
-     <TextBlock Text="其它" FontSize="15" Foreground="{DynamicResource ColorBrush4}" Grid.Column="1"
-          VerticalAlignment="Center" HorizontalAlignment="Center" />
-     <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5"
-          Stretch="Fill" Grid.Column="2" />
-</Grid>
-<local:MyCard Margin="0,0,0,12" Title="友情链接" CanSwap="True" IsSwaped="True">
-     <StackPanel Margin="24,40,24,15">
-          <local:MyListItem Margin="-2,0,0,0"
-               Logo="pack://application:,,,/images/blocks/Grass.png" Title="新闻页面"
-               Info="作者：最亮的信标" EventType="打开帮助" EventData="https://news.bugjump.net/News.json"
-               Type="Clickable" />
-          <local:MyListItem Margin="-2,0,0,0"
-               Logo="pack://application:,,,/images/blocks/Grass.png" Title="主页市场"
-               Info="作者：MFn233" EventType="打开帮助"
-               EventData="https://mfn233.github.io/PCL-Mainpage-Market/market.json"
-               Type="Clickable" />
-     </StackPanel>
+
+<local:MyCard Title="你知道吗"  Margin="0,8,0,4"  CanSwap="True" IsSwaped="False" >
+       <StackPanel Margin="25,40,23,15" >
+             <local:MyTextButton Margin="2,-4,2,-20" FontSize="20" Height="35" HorizontalAlignment="Left" 
+                      Text="{hint}" EventType="刷新主页" ToolTip="点击刷新"/>
+       </StackPanel>
 </local:MyCard>
-<local:MyCard Margin="0,0,0,8" Title="关于" CanSwap="True" IsSwaped="True">
-     <StackPanel Margin="24,40,24,15">
-          <local:MyListItem Margin="-2,0,10,0" Info="最新版本的更新日志"
-               Logo="pack://application:,,,/images/blocks/RedstoneLampOn.png" Title="更新日志"
-               EventType="打开网页"
-               EventData="https://github.com/MFn233/PCL-Mainpage/releases/latest"
-               Type="Clickable" />
-          <local:MyListItem Margin="-2,0,10,0" Info="GitHub项目仓库"
-               Logo="pack://application:,,,/images/blocks/CommandBlock.png" Title="项目仓库"
-               EventType="打开网页" EventData="https://github.com/MFn233/PCL-Mainpage"
-               Type="Clickable" />
-          <local:MyListItem Margin="-2,0,0,0" Info="排名不分先后"
-               Logo="pack://application:,,,/images/blocks/GoldBlock.png" Title="鸣谢"
-               EventType="弹出窗口"
-               EventData="鸣谢|感谢以下朋友！此窗口专门用于记录对这个项目有帮助的除作者之外的其他人，括号中注明了他们的来历。\n\n(GitHub) MCSteve123提交大量pull request\n(GitHub) Ad_closeNN提交大量pull request\n(GitHub) JingHai-Lingyun提供改进建议\n(GitHub) wuliaodexiaoluo提供改进建议\n(GitHub) erqianwu提供改进建议\n(sipc.ink) SIPC曾帮助将主页文件挂载于云服务器"
-               Type="Clickable" />
-          <local:MyListItem Margin="-2,0,0,0" Info="MFn233"
-               Logo="pack://application:,,,/images/blocks/GoldBlock.png" Title="关于作者"
-               EventType="弹出窗口"
-               EventData="关于作者|我是MFn233，一个妄图写出完美代码的程序员，该主页目前由我独立完成，并在GitHub上开源。欢迎你前往仓库为我的项目提issue\n\n如果你真的很希望更多地了解我，欢迎访问我的网站: mfn233.github.io\n\n©MFn233 2023/7/22"
-               Type="Clickable" />
-     </StackPanel>
-</local:MyCard>
+
