@@ -134,7 +134,7 @@
                Type="Clickable" />
           <local:MyListItem Margin="-2,0,0,0"
                Logo="pack://application:,,,/images/blocks/Grass.png" Title="腐竹网站仓库界面"
-               Info="作者：MFn233" EventType="打开帮助"
+               Info="Github" EventType="打开帮助"
                EventData="https://github.com/zyyan675/Qingzhoumiddleschool.github.io"
                Type="Clickable" />
      </StackPanel>
