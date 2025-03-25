@@ -6,10 +6,6 @@ Fork项目，制作你自己的主页文件！
 
 [点我打开文件Custom.xaml](./Custom.xaml)
 
-## 贡献者
-
-![Contributors](https://contrib.rocks/image?repo=MFn233/PCL-Mainpage)
-
 ~Bus factor : 3~
 
 ## 讨论
