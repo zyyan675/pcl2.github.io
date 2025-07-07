@@ -44,11 +44,6 @@
                Logo="pack://application:,,,/images/blocks/Grass.png" Title="启动基岩版"
                Info="使用微软商店基岩版" EventType="打开网页" EventData="minecraft://"
                Type="Clickable" />
-          <local:MyListItem Margin="-2,0,0,0"
-               Logo="pack://application:,,,/images/blocks/CommandBlock.png" Title="不知道写啥了"
-               Type="Clickable"
-               Info="不知道写啥了" EventType="打开帮助"
-               EventData="https://zyyan675.github.io/Qingzhoumiddleschool.github.io/" />
      </StackPanel>
 </local:MyCard>
 
