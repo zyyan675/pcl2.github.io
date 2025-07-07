@@ -6,16 +6,15 @@
 -->
 
 <!--欢迎页-->
-<local:MyCard Margin="0,-6,0,12" Title="请确保您可以访问Github.io以更新该主页"> <!--下面不是卡片，所以不用0,0,0,12-->
+<local:MyCard Margin="0,-6,0,12" Title="欢迎，请确保您可以访问Github.io以更新该主页"> <!--下面不是卡片，所以不用0,0,0,12-->
      <StackPanel Margin="24,35,24,15">
           <TextBlock HorizontalAlignment="Center" Margin="0,0,0,0"
                Foreground="{DynamicResource ColorBrush2}" FontSize="20"
-               Text="中华光兴联邦万岁" />
-               Text="最新的整合包版本为Sinytra 1.2.2" />
+               Text="服务器当前整合包版本为2.0.3" />
           <Calendar HorizontalAlignment="Center" Margin="0,12,0,10" />
           <!--因为“你知道吗”在启动游戏的时候会出现，所以我只在这里设置了回声洞-->
           <TextBlock Margin="5,0,5,12" TextWrapping="Wrap" HorizontalAlignment="Center"
-               Text="服务器存档当前状态正常，上一次回档在040725" />
+               Text="主页持续更新..." />
      </StackPanel>
 </local:MyCard>
 
@@ -67,7 +66,7 @@
      <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5"
           Stretch="Fill" Grid.Column="2" />
 </Grid>
-<local:MyCard Margin="0,0,0,12" Title="PCL2工具" CanSwap="True" IsSwaped="True">
+<local:MyCard Margin="0,0,0,12" Title="PCL2启动器工具" CanSwap="True" IsSwaped="True">
      <StackPanel Margin="24,40,24,15">
           <local:MyHint IsWarn="False" Text="调用启动器自带的工具" Margin="0,0,0,10" />
           <Grid>
@@ -109,3 +108,57 @@
                <local:MyButton EventType="下载文件" EventData="{Binding ElementName=web,Path=Text}"
                     Text="开始下载→" Margin="5,0,0,0" Height="30" Grid.Column="2" Padding="2,0,2,0"
                     ColorType="Highlight" />
+          </Grid>
+     </StackPanel>
+</local:MyCard>
+
+<!--其它-->
+<Grid Margin="0,0,0,8">
+     <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="1*" />
+          <ColumnDefinition Width="80" />
+          <ColumnDefinition Width="1*" />
+     </Grid.ColumnDefinitions>
+     <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5"
+          Stretch="Fill" Grid.Column="0" />
+     <TextBlock Text="其它" FontSize="15" Foreground="{DynamicResource ColorBrush4}" Grid.Column="1"
+          VerticalAlignment="Center" HorizontalAlignment="Center" />
+     <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5"
+          Stretch="Fill" Grid.Column="2" />
+</Grid>
+<local:MyCard Margin="0,0,0,12" Title="链接" CanSwap="True" IsSwaped="True">
+     <StackPanel Margin="24,40,24,15">
+          <local:MyListItem Margin="-2,0,0,0"
+               Logo="pack://application:,,,/images/blocks/Grass.png" Title="本主页仓库界面"
+               Info="Github" EventType="打开帮助" EventData="https://github.com/zyyan675/pcl2.github.io"
+               Type="Clickable" />
+          <local:MyListItem Margin="-2,0,0,0"
+               Logo="pack://application:,,,/images/blocks/Grass.png" Title="腐竹网站仓库界面"
+               Info="Github" EventType="打开帮助"
+               EventData="https://github.com/zyyan675/Qingzhoumiddleschool.github.io"
+               Type="Clickable" />
+     </StackPanel>
+</local:MyCard>
+<local:MyCard Margin="0,0,0,8" Title="关于" CanSwap="True" IsSwaped="True">
+     <StackPanel Margin="24,40,24,15">
+          <local:MyListItem Margin="-2,0,10,0" Info="最新版本的更新日志"
+               Logo="pack://application:,,,/images/blocks/RedstoneLampOn.png" Title="更新日志"
+               EventType="打开网页"
+               EventData="https://github.com/MFn233/PCL-Mainpage/releases/latest"
+               Type="Clickable" />
+          <local:MyListItem Margin="-2,0,10,0" Info="GitHub项目仓库"
+               Logo="pack://application:,,,/images/blocks/CommandBlock.png" Title="项目仓库"
+               EventType="打开网页" EventData="https://github.com/MFn233/PCL-Mainpage"
+               Type="Clickable" />
+          <local:MyListItem Margin="-2,0,0,0" Info="MFn233"
+               Logo="pack://application:,,,/images/blocks/GoldBlock.png" Title="鸣谢"
+               EventType="弹出窗口"
+               EventData="鸣谢|感谢以下开发人员\n\n(GitHub) MFn233\龙腾喵越"
+               Type="Clickable" />
+          <local:MyListItem Margin="-2,0,0,0" Info="Yanzy9792"
+               Logo="pack://application:,,,/images/blocks/GoldBlock.png" Title="关于作者"
+               EventType="弹出窗口"
+               EventData="关于作者|Yanzy9792 改自MFn233的开源项目"
+               Type="Clickable" />
+     </StackPanel>
+</local:MyCard>
