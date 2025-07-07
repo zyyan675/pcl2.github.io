@@ -109,6 +109,3 @@
                <local:MyButton EventType="下载文件" EventData="{Binding ElementName=web,Path=Text}"
                     Text="开始下载→" Margin="5,0,0,0" Height="30" Grid.Column="2" Padding="2,0,2,0"
                     ColorType="Highlight" />
-          </Grid>
-     </StackPanel>
-</local:MyCard>
